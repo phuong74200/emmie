@@ -1,9 +1,11 @@
 const add = (imgLocation, name, price) => {
     const item = document.createElement('div');
     item.className = 'item';
+    item.setAttribute('data-aos', "fade-up");
 
     const img = document.createElement('img');
     img.src = imgLocation;
+    img.loading = "lazy";
 
     const des = document.createElement('div');
     des.className = "description";
@@ -153,11 +155,6 @@ const products = [
         "price": "490.000"
     },
     {
-        "img": "https://bizweb.dktcdn.net/thumb/large/100/302/551/products/dsc5413-1-copy.jpg?v=1599238888000",
-        "name": "1",
-        "price": "250.000"
-    },
-    {
         "img": "https://bizweb.dktcdn.net/thumb/large/100/302/551/products/dsc5354-1-copy.jpg?v=1599220430000",
         "name": "TR FEATHER OXIDIZE",
         "price": "270.000"
@@ -238,11 +235,6 @@ const products = [
         "price": "490.000"
     },
     {
-        "img": "https://bizweb.dktcdn.net/thumb/large/100/302/551/products/beo-5772-1.jpg?v=1586367887000",
-        "name": "1",
-        "price": "290.000"
-    },
-    {
         "img": "https://bizweb.dktcdn.net/thumb/large/100/302/551/products/beo-5788-1.jpg?v=1586368107000",
         "name": "TR ONLY BIG DAISY FLOWER",
         "price": "250.000"
@@ -253,18 +245,8 @@ const products = [
         "price": "250.000"
     },
     {
-        "img": "https://bizweb.dktcdn.net/thumb/large/100/302/551/products/beo-5784-1.jpg?v=1586368037000",
-        "name": "1",
-        "price": "230.000"
-    },
-    {
         "img": "https://bizweb.dktcdn.net/thumb/large/100/302/551/products/beo-5781-1.jpg?v=1586367996000",
         "name": "TR SUN MOON STAR",
-        "price": "250.000"
-    },
-    {
-        "img": "https://bizweb.dktcdn.net/thumb/large/100/302/551/products/beo-5778-1.jpg?v=1586367963000",
-        "name": "1",
         "price": "250.000"
     },
     {
@@ -334,6 +316,16 @@ const products = [
     }
 ]
 
-products.forEach(item => {
-    add(item.img, item.name, item.price);
+products.forEach((item, index) => {
+    if (index < 30) add(item.img, item.name, item.price);
 })
+
+const swiper = new Swiper(".mySwiper", {
+    pagination: {
+        el: ".swiper-pagination",
+    },
+});
+
+AOS.init({
+    duration: 300
+});
