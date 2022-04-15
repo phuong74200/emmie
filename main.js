@@ -1,7 +1,23 @@
+const getInt = (min, max) => {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 const add = (imgLocation, name, price) => {
     const item = document.createElement('div');
     item.className = 'item';
     item.setAttribute('data-aos', "fade-up");
+
+    if (getInt(0, 100) % 5 == 0) {
+        const sale = document.createElement('div');
+        sale.className = 'sale';
+        sale.textContent = `-${getInt(3, 70)}%`;
+        item.appendChild(sale);
+    } else if (getInt(0, 10) % 4 == 0) {
+        const sale = document.createElement('div');
+        sale.className = 'sale';
+        sale.textContent = `-25%`;
+        item.appendChild(sale);
+    }
 
     const img = document.createElement('img');
     img.src = imgLocation;
@@ -9,6 +25,19 @@ const add = (imgLocation, name, price) => {
 
     const des = document.createElement('div');
     des.className = "description";
+
+    const expandMenu = document.createElement('div');
+    expandMenu.className = "expand-menu";
+
+    const cart = document.createElement('span');
+    cart.className = "icon-shopping_basket";
+
+    const heart = document.createElement('span');
+    heart.className = "icon-heart2";
+
+    expandMenu.appendChild(cart);
+    expandMenu.appendChild(heart);
+    des.appendChild(expandMenu);
 
     const title = document.createElement('div');
     title.textContent = name.toUpperCase();

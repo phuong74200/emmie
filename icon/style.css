@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?pychz');
-  src:  url('fonts/icomoon.eot?pychz#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?pychz') format('truetype'),
-    url('fonts/icomoon.woff?pychz') format('woff'),
-    url('fonts/icomoon.svg?pychz#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?g037od');
+  src:  url('fonts/icomoon.eot?g037od#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?g037od') format('truetype'),
+    url('fonts/icomoon.woff?g037od') format('woff'),
+    url('fonts/icomoon.svg?g037od#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,15 +25,33 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-heart3:before {
+  content: "\e908";
+}
 .icon-instagram:before {
   content: "\e900";
 }
+.icon-shopping_basket:before {
+  content: "\e909";
+}
 .icon-facebook:before {
   content: "\e901";
+}
+.icon-heart1:before {
+  content: "\e905";
+}
+.icon-heart2:before {
+  content: "\e906";
 }
 .icon-twitter-with-circle:before {
   content: "\e902";
 }
 .icon-youtube:before {
   content: "\e903";
+}
+.icon-heart:before {
+  content: "\e907";
+}
+.icon-user-circle:before {
+  content: "\e904";
 }
