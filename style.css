@@ -20,7 +20,8 @@ body {
 
 .item {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  transition: all 0.1s; }
   .item img {
     object-fit: cover;
     max-width: 100%; }
@@ -42,6 +43,8 @@ body {
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical; }
+  .item:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; }
 
 ::-webkit-scrollbar {
   width: 20px; }
