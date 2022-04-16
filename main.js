@@ -358,3 +358,13 @@ const swiper = new Swiper(".mySwiper", {
 AOS.init({
     duration: 300
 });
+
+const btns = document.querySelector('.btn-container');
+
+document.getElementById("burgerBtn").addEventListener('click', (e) => {
+    if (btns.className == 'btn-container') {
+        btns.classList.add('display-none');
+    } else {
+        btns.classList.remove('display-none');
+    }
+})

@@ -22,6 +22,7 @@ nav {
     top: 0;
     padding: 0 16px;
     user-select: none;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
     .logo-container {
         display: flex;
@@ -38,17 +39,33 @@ nav {
         position: sticky;
         top: 0;
         background: #f2f2f2;
-        margin: {
-            top: 0.5rem;
-            bottom: 1.5rem;
-        }
+        margin-bottom: 1.5rem;
 
         .nav-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             margin: 0 auto;
             max-width: 1150px;
+            padding: 0 16px;
+            position: relative;
+
+            .btn-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .burger-menu {
+                font-size: 24px;
+                align-items: center;
+                display: none;
+                width: 100%;
+                height: 50px;
+                justify-content: space-between;
+                font-family: Avenir;
+
+                .icon-menu {
+                    cursor: pointer;
+                }
+            }
 
             @media (max-width: 1150px) {
                 max-width: 950px;
@@ -60,12 +77,38 @@ nav {
 
             @media (max-width: 768px) {
                 max-width: 720px;
+                padding: 0 8px;
+
+                .burger-menu {
+                    display: flex;
+                }
+
+                .btn-container {
+                    position: absolute;
+                    transform: translateY(100%);
+                    background: #fff;
+                    bottom: 0;
+                    left: -16px;
+                    width: 100%;
+                    padding: 0 16px;
+                    box-sizing: initial;
+                    flex-direction: column;
+
+                    .btn {
+                        width: 100%;
+
+                        &:hover .drop-menu {
+                            display: none;
+                        }
+                    }
+                }
             }
         }
 
         .btn {
             padding: 16px;
             position: relative;
+            cursor: pointer;
 
             @keyframes growDown {
                 0% {
@@ -102,10 +145,22 @@ nav {
                 }
             }
 
-            &:hover .drop-menu {
-                display: block;
+            &:hover {
+                background: #272727;
+                color: #fff;
+
+                .drop-menu {
+                    color: #272727;
+                    display: block;
+                }
             }
         }
+    }
+}
+
+.display-none {
+    @media (max-width: 768px) {
+        display: none !important;
     }
 }
 
@@ -178,8 +233,8 @@ body {
 
     .sale {
         position: absolute;
-        left: 12px;
-        top: 12px;
+        left: 8px;
+        top: 8px;
         padding: 8px;
         background: #272727;
         color: #fff;
@@ -306,7 +361,7 @@ footer {
 }
 
 ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -315,9 +370,6 @@ footer {
 
 ::-webkit-scrollbar-thumb {
     background-color: #d6dee1;
-    border-radius: 20px;
-    border: 6px solid transparent;
-    background-clip: content-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
