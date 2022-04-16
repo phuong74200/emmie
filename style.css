@@ -12,20 +12,67 @@ html {
   font-size: 16px; }
 
 nav {
-  padding: 16px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  z-index: 999;
-  position: sticky;
   background: #fff;
-  top: 0; }
-  nav .logo {
-    max-width: 50%;
-    font-family: Avenir;
-    font-size: 2rem; }
-    nav .logo img {
-      max-width: 100%;
-      height: auto;
-      object-fit: cover; }
+  top: 0;
+  padding: 0 16px;
+  user-select: none; }
+  nav .logo-container {
+    display: flex;
+    justify-content: center; }
+    nav .logo-container img {
+      margin: 0 auto;
+      max-width: 150px; }
+  nav.nav-bar {
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    background: #f2f2f2;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem; }
+    nav.nav-bar .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 auto;
+      max-width: 1150px; }
+      @media (max-width: 1150px) {
+        nav.nav-bar .nav-container {
+          max-width: 950px; } }
+      @media (max-width: 992px) {
+        nav.nav-bar .nav-container {
+          max-width: 720px; } }
+      @media (max-width: 768px) {
+        nav.nav-bar .nav-container {
+          max-width: 720px; } }
+    nav.nav-bar .btn {
+      padding: 16px;
+      position: relative; }
+@keyframes growDown {
+  0% {
+    transform: scaleY(0); }
+  80% {
+    transform: scaleY(1.1); }
+  100% {
+    transform: scaleY(1); } }
+      nav.nav-bar .btn .drop-menu {
+        position: absolute;
+        animation: growDown 300ms ease-in-out forwards;
+        top: 50px;
+        display: none;
+        transform-origin: top center;
+        transition: all 0.3s;
+        background: #fff;
+        left: 0;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; }
+        nav.nav-bar .btn .drop-menu div {
+          width: fit-content;
+          padding: 16px;
+          width: 150px;
+          cursor: pointer; }
+          nav.nav-bar .btn .drop-menu div:hover {
+            background: #f2f2f2; }
+      nav.nav-bar .btn:hover .drop-menu {
+        display: block; }
 
 body {
   font-family: Montserrat;
@@ -144,10 +191,11 @@ body {
 
 footer {
   background: #f2f2f2;
-  width: 100%; }
+  width: 100%;
+  margin-top: 20px; }
   footer .footer-container {
     margin: 0 auto;
-    padding: 8px; }
+    padding: 16px; }
     footer .footer-container .icons {
       margin: 1rem auto;
       width: 150px;
